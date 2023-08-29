@@ -7,7 +7,7 @@ title: Student Blog
 ## Kayla's Home Page
 This is about your journey. Start now!!!
 ### About Me!
-<img src="images\IMG_1159.jpg" width="50%" height="50%>
+<img src="images\IMG_1159.jpg" width="50%" height="50%">
 - I've lived in San Diego, CA my whole life
 - I'm Vietnamese
 - I like playing soccer, being with family, and baking
