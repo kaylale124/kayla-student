@@ -20,9 +20,6 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 - [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
 - Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
 
-## My Weekly Updates
 
-| Weeks   | Struggles  | Learned  | Updated  |
-| ------- | ---------- | -------- | -------- |
-| Week 0  |Certain commands wouldn't work (ex:make wouldn't work unless bundle install was done) |How to set up tools (Github, VSCode,Jupyter Notebooks, a Slack account, WSL) | My Blog  |
-| Week 1  |            |          |          |
+
+
