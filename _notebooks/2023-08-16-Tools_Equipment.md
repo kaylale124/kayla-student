@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Tools and Equipment Overview
 description: Tools and equipment have changed lives, look at the mobile phone.  Tools, equipment, with the addition of coding can make you immensely more successful in any field.
-courses: { compsci:{week: 1} }
+courses: {  }
 type: hacks
 ---
 

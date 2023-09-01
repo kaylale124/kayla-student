@@ -2,9 +2,9 @@
 toc: true
 comments: true
 layout: post
-title: Tools and Equipment Overview ...
+title: Tool Procedure
 description: This shows procedures performed by student, not the procedures for the entire class.  Modified or prunned for specific machine.
-courses: { }
+courses: {compsci: {week: 0} }
 type: hacks
 ---
 
@@ -91,3 +91,5 @@ $ python --version  # version of python3 should be shown
 Available kernels:
   python3    /home/shay/.local/share/jupyter/kernels/python3
 ```
+
+
