@@ -2,10 +2,10 @@
 toc: true
 comments: true
 layout: post
-title: Review Ticket
+title: Review Ticket - Week 2
 description: Example Review Ticket!!! This will help us communicate results.
 type: tangibles
-courses: { compsci: {week: 1} }
+courses: { compsci: {week: 2} }
 ---
 
 ### Summary of Accomplishments
@@ -21,3 +21,4 @@ courses: { compsci: {week: 1} }
 - Run make commands to build and test blog locally, before pushing changes to GitHub pages.
 - Discuss GitHub Account, show ability to push/pull changes from VSCode.
 - Discuss development on Themes, show how you plan to organized lab notebook.
+- Edited and customized theme, images, and links
