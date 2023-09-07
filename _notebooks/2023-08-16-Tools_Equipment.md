@@ -24,7 +24,7 @@ Learning Development tools, working with Projects, is the key to a <mark>rapid e
     - [Slack for Windows](https://slack.com/downloads/windows)
     - [Slack for MacOS](https://slack.com/intl/en-in/downloads/mac)
     - [Slack for Linux](https://slack.com/intl/en-gb/downloads/linux)
-- [Windows Desktops install WSL](https://learn.microsoft.com/en-us/windows/wsl/install).  WSL enables students to work with Linux tools and environments on Windows machines.  WSL supports a Linux-like terminal experience within the Windows operating system.   WSL users will install WSL 2 and Ubuntu distriibutions.   Everyone in this class will be working on a form of Linux when in Terminal. 
+- [Windows Desktops install WSL](https://learn.microsoft.com/en-us/windows/wsl/install).  WSL enables students to work with Linux tools and environments on Windows machines.  WSL supports a Linux-like terminal experience within the Windows operating system.   WSL users will install WSL 2 and Ubuntu distributions.   Everyone in this class will be working on a form of Linux when in Terminal. 
    - [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 - `Docker` is an open platform for developing, shipping, and running applications. Docker allows students to create isolated environments for testing and deploying their applications, ensuring consistency across different systems. Docker Desktop allows users to test deployment scripts on their local machines, enabling them to debug and troubleshoot their applications before deploying them on AWS.
     - [Docker Desktop for Macos](https://docs.docker.com/desktop/install/mac-install/)  
