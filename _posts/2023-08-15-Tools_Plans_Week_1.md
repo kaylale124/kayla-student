@@ -9,7 +9,7 @@ courses: { compsci: {week: 1} }
 ---
 
 ### Unit 1 / Week 1
-Learning outcome.  Installing Tools and showing usage of VSCode.
+Learning outcome.  Personalizing and customizing Student Blog
 - Monday - Sign up for live reviews for either Wednesday, Thursday, or Friday. Tech Talk: Create a student repo. 
 - Tuesday - Build a personal and running Github page
 - Wednesday - Personalize website by selecting a theme, inserting images, adding links, and other alterations
