@@ -4,7 +4,7 @@ comments: false
 layout: post
 title: Data Table For Snake Game
 description: This is where I record my data on my Snake Game.
-type: tangibles
+type: hacks
 categories: [C3.0,C3.1,C4.1]
 courses: { compsci: {week: 3} }
 ---
