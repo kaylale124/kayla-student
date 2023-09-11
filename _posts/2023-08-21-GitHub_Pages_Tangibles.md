@@ -14,3 +14,6 @@ courses: { compsci: {week: 3} }
 - Collaborate with partner for live review
 - Make an interactive table
 - Create a plan to accomplish for the week
+
+## Questions
+- What is the results in Linux?
