@@ -72,19 +72,19 @@ All highscores between my partners and I are below. All have been recorded on Fa
                     <td>Vrnda</td>
                     <td>Fast</td>
                     <td>1</td>
-                    <td> - </td>
+                    <td> 1 </td>
                 </tr>
                 <tr>
                     <td>Vrnda</td>
                     <td>Fast</td>
                     <td>2</td>
-                    <td> - </td>
+                    <td> 2 </td>
                 </tr>
                 <tr>
                     <td>Vrnda</td>
                     <td>Fast</td>
                     <td>3</td>
-                    <td> - </td>
+                    <td> 3 </td>
                 </tr>
             </tbody>
         </table>
