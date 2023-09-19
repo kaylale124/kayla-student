@@ -5,7 +5,6 @@ hide: true
 layout: default
 description: A common way to become familiar with a language is to build a calculator.  This calculator shows off button with actions.
 permalink: /techtalk/home_style
-categories: [C7.0]
 courses: { compsci: {week: 4} }
 type: hacks
 ---
@@ -46,6 +45,15 @@ HTML implementation of the calculator.
     display: flex;
     align-items: center;
   }
+
+  .calculator-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(5, 1fr); /* 5 rows*/
+    grid-gap: 10px;
+  }
+
+  
 </style>
 
 <!-- Add a container for the animation -->
@@ -54,25 +62,27 @@ HTML implementation of the calculator.
       <!--result-->
       <div class="calculator-output" id="output">0</div>
       <!--row 1-->
-      <div class="calculator-number">1</div>
-      <div class="calculator-number">2</div>
-      <div class="calculator-number">3</div>
-      <div class="calculator-operation">+</div>
+      <div class="calculator-clear" style="grid-column: 4/ span 1; grid-row: 2/span 1" ><button type="button">A/C</button></div>
       <!--row 2-->
-      <div class="calculator-number">4</div>
-      <div class="calculator-number">5</div>
-      <div class="calculator-number">6</div>
-      <div class="calculator-operation">-</div>
+      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 3/span 1" id="button-1" data-value="1"><button type="button">1</button></div>
+      <div class="calculator-number" style="grid-column: 2/ span 1; grid-row: 3/span 1" id="button-2" data-value="2"><button type="button">2</button></div>
+      <div class="calculator-number" style="grid-column: 3/ span 1; grid-row: 3/span 1" id="button-3" data-value="3"><button type="button">3</button></div>
+      <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 3/span 1"><button type="button">+</button></div>
       <!--row 3-->
-      <div class="calculator-number">7</div>
-      <div class="calculator-number">8</div>
-      <div class="calculator-number">9</div>
-      <div class="calculator-operation">*</div>
+      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 4/span 1" id="button-4" data-value="4"><button type="button">4</button></div>
+      <div class="calculator-number" style="grid-column: 2/ span 1; grid-row: 4/span 1" id="button-5" data-value="5"><button type="button">5</button></div>
+      <div class="calculator-number" style="grid-column: 3/ span 1; grid-row: 4/span 1" id="button-6" data-value="6"><button type="button">6</button></div>
+      <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 4/span 1"><button type="button">-</button></div>
       <!--row 4-->
-      <div class="calculator-clear">A/C</div>
-      <div class="calculator-number">0</div>
-      <div class="calculator-number">.</div>
-      <div class="calculator-equals">=</div>
+      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 5/span 1" id="button-7" data-value="7"><button type="button">7</button></div>
+      <div class="calculator-number" style="grid-column: 2/ span 1; grid-row: 5/span 1" id="button-8" data-value="8"><button type="button">8</button></div>
+      <div class="calculator-number" style="grid-column: 3/ span 1; grid-row: 5/span 1" id="button-9" data-value="9"><button type="button">9</button></div>
+      <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 5/span 1"><button type="button">*</button></div>
+      <!--row 5-->
+      <div class="calculator-number" style="grid-column: 2/ span 1; grid-row: 6/span 1" id="button-0" data-value="0"><button type="button">0</button></div>
+      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 6/span 1"><button type="button">.</button></div>
+      <div class="calculator-equals" style="grid-column: 3/ span 1; grid-row: 6/span 1"><button type="button">=</button></div>
+      <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 6/span 1"><button type="button">/</button></div>
   </div>
 </div>
 
@@ -136,6 +146,30 @@ function operation (choice) { // function to input operations into the calculato
     output.innerHTML = firstNumber.toString();
     nextReady = true;
 }
+
+
+// Keyboard input listener
+document.addEventListener("keydown", function(event) {
+  const keyValue = event.key;
+  if (/[0-9]/.test(keyValue)) {
+    number(keyValue); // Handle number keys 0-9
+  } else if (keyValue === "+") {
+    operation("+");
+  } else if (keyValue === "-") {
+    operation("-");
+  } else if (keyValue === "*") {
+    operation("*");
+  } else if (keyValue === "/") {
+    operation("/");
+  } else if (keyValue === "=" || keyValue === "Enter") {
+    equal();
+  } else if (keyValue === "Escape") {
+    clearCalc();
+  } else if (keyValue === "Backspace"){
+
+  }
+});
+
 
 // Calculator
 function calculate (first, second) { // function to calculate the result of the equation
