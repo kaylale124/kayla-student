@@ -9,7 +9,7 @@ courses: { compsci: {week: 4} }
 ---
 
 ### Summary of Accomplishments
-> 
-
-### Questions
-- 
+> Create an input and 4 function calculator
+- Add a reset button and make the totals, average, and count a table
+- Add division to 4 function calculator
+- Customize calculator
