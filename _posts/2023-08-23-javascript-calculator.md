@@ -27,7 +27,7 @@ HTML implementation of the calculator.
     - The div calculator-container sets 4 elements to a row
     Background is credited to Vanta JS and is implemented at bottom of this page
 -->
-<h1 text-align: middle>4 Function Calculator</h1>
+<h1>4 Function Calculator</h1>
 
 <style>
   /* Calculator container styles */
