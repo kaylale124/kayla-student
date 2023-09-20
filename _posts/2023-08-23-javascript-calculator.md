@@ -27,6 +27,7 @@ HTML implementation of the calculator.
     - The div calculator-container sets 4 elements to a row
     Background is credited to Vanta JS and is implemented at bottom of this page
 -->
+<h1>4 Function Calculator</h1>
 <style>
   /* Calculator container styles */
 .calculator-container {
@@ -68,13 +69,14 @@ button:hover {
   text-align: left;
   grid-column: span 4;
   grid-row: span 1;
+  color: #000000;
 }
 
   .calculator-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-template-rows: repeat(5, 1fr); /* 5 rows*/
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 
   
@@ -191,6 +193,15 @@ document.addEventListener("keydown", function(event) {
     clearCalc();
   }
 });
+
+function handleDecimal() {
+  if (nextReady) {
+    output.innerHTML = "0.";
+    nextReady = false;
+  } else if (output.innerHTML.indexOf(".") === -1) {
+    output.innerHTML += ".";
+  }
+}
 
 
 // Calculator
