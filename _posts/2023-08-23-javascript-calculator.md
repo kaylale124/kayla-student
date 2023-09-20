@@ -28,23 +28,47 @@ HTML implementation of the calculator.
     Background is credited to Vanta JS and is implemented at bottom of this page
 -->
 <style>
-  .calculator-output {
-    /* calulator output 
-      top bar shows the results of the calculator;
-      result to take up the entirety of the first row;
-      span defines 4 columns and 1 row
-    */
-    grid-column: span 4;
-    grid-row: span 1;
-  
-    border-radius: 10px;
-    padding: 0.25em;
-    font-size: 20px;
-    border: 5px solid black;
-  
-    display: flex;
-    align-items: center;
-  }
+  /* Calculator container styles */
+.calculator-container {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Operator buttons */
+.calculator-operation button {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Display styles */
+.calculator-output {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 24px;
+  font-family:courier new;
+  text-align: left;
+  grid-column: span 4;
+  grid-row: span 1;
+}
 
   .calculator-container{
     display: grid;
@@ -80,7 +104,7 @@ HTML implementation of the calculator.
       <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 5/span 1"><button type="button">*</button></div>
       <!--row 5-->
       <div class="calculator-number" style="grid-column: 2/ span 1; grid-row: 6/span 1" id="button-0" data-value="0"><button type="button">0</button></div>
-      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 6/span 1"><button type="button">.</button></div>
+      <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 6/span 1" id ><button type="button">.</button></div>
       <div class="calculator-equals" style="grid-column: 3/ span 1; grid-row: 6/span 1"><button type="button">=</button></div>
       <div class="calculator-operation" style="grid-column: 4/ span 1; grid-row: 6/span 1"><button type="button">/</button></div>
   </div>
