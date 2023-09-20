@@ -189,8 +189,6 @@ document.addEventListener("keydown", function(event) {
     equal();
   } else if (keyValue === "Escape") {
     clearCalc();
-  } else if (keyValue === "Backspace"){
-
   }
 });
 
