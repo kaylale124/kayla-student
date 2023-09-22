@@ -27,8 +27,7 @@ HTML implementation of the calculator.
     - The div calculator-container sets 4 elements to a row
     Background is credited to Vanta JS and is implemented at bottom of this page
 -->
-<h1>4 Function Calculator</h1>
-
+<h1 style="text-align: center">4 Function Calculator</h1>
 <style>
   /* Calculator container styles */
 .calculator-container {
@@ -37,28 +36,24 @@ HTML implementation of the calculator.
   border-radius: 10px;
   padding: 10px;
 }
-
 /* Button styles */
 button {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px 40px;
+  padding: 20px 35px;
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
 }
-
 button:hover {
   background-color: #e0e0e0;
 }
-
 /* Operator buttons */
 .calculator-operation button {
   background-color: #f0f0f0;
   font-weight: bold;
 }
-
 /* Display styles */
 .calculator-output {
   background-color: #fff;
@@ -72,7 +67,6 @@ button:hover {
   grid-row: span 1;
   color: #000000;
 }
-
   .calculator-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -92,6 +86,8 @@ button:hover {
       <!--result-->
       <div class="calculator-output" id="output">0</div>
       <!--row 1-->
+      <!-- Add Backspace button -->
+<div class="calculator-operation" style="grid-column: 2/ span 1; grid-row: 2/span 1"><button type="button" id="button-backspace">⌫</button></div>
       <div class="calculator-clear" style="grid-column: 4/ span 1; grid-row: 2/span 1" ><button type="button">A/C</button></div>
       <!--row 2-->
       <div class="calculator-number" style="grid-column: 1/ span 1; grid-row: 3/span 1" id="button-1" data-value="1"><button type="button">1</button></div>
@@ -195,6 +191,10 @@ document.addEventListener("keydown", function(event) {
     equal();
   } else if (keyValue === "Escape") {
     clearCalc();
+  } else if (keyValue === "."){
+    handleDecimal()
+  } else if (keyValue === "Backspace") {
+    backspace(); // Handle Backspace key
   }
 });
 
@@ -257,6 +257,22 @@ function clearCalc () { // clears calculator
     output.innerHTML = "0";
     nextReady = true;
 }
+
+function backspace() {
+    const currentOutput = output.innerHTML;
+    if (currentOutput.length > 1) {
+        output.innerHTML = currentOutput.slice(0, -1); // Remove the last character
+    } else {
+        output.innerHTML = "0"; // If there's only one character, reset to 0
+    }
+}
+
+// Backspace button listener
+const backButton = document.getElementById("button-backspace");
+backButton.addEventListener("click", function () {
+    backspace();
+});
+
 </script>
 
 <!-- 
