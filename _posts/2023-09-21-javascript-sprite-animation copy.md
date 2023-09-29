@@ -21,7 +21,8 @@ type: hacks
             <input type="radio" name="animation" id="walking">
             <label for="walking">Walking</label><br>
         </div>
-    </div>
+    </div>9l
+    
 </body>
 
 <script>

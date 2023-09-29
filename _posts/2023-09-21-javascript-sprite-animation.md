@@ -78,6 +78,12 @@ type: hacks
 
         const dog = new Dog();
 
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft' && document.getElementById('walking').checked) {
+        // Check if the "Walking" radio button is selected and the left arrow key is pressed
+        dog.x -= 5; // Update the dog's x-coordinate to move it to the left
+    }
+});
         // Add event listener to the parent container for event delegation
         const controls = document.getElementById('controls');
         controls.addEventListener('click', function (event) {
