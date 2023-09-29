@@ -4,7 +4,7 @@ comments: true
 hide: true
 layout: default
 description: Use JavaScript without external libraries to animate Mario moving across screen, OOP style.
-courses: { compsci: {week: 6} }
+courses: { compsci: {week: } }
 type: hacks
 ---
 
@@ -29,9 +29,11 @@ type: hacks
     window.addEventListener('load', function () {
         const canvas = document.getElementById('spriteContainer');
         const ctx = canvas.getContext('2d');
-        const SPRITE_WIDTH = 160;
-        const SPRITE_HEIGHT = 144; 
-        const SCALE_FACTOR = 2;  
+        const SPRITE_WIDTH = 160;  // matches sprite pixel width
+        const SPRITE_HEIGHT = 144; // matches sprite pixel height
+        const SCALE_FACTOR = 2;  // control size of sprite on canvas
+        const FRAME_LIMIT = 48;  // number of frames per row, this code assume each row is same
+        // const FRAME_RATE = 15;  // not used
 
         canvas.width = SPRITE_WIDTH * SCALE_FACTOR;
         canvas.height = SPRITE_HEIGHT * SCALE_FACTOR;
