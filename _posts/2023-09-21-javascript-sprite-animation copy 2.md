@@ -4,68 +4,67 @@ comments: true
 hide: true
 layout: default
 description: Use JavaScript without external libraries to animate Mario moving across screen, OOP style.
-courses: { compsci: {week: 5} }
+courses: { compsci: {week: }}
 type: hacks
 ---
-
 <body>
     <div>
         <canvas id="spriteContainer"> <!-- Within the base div is a canvas. An HTML canvas is used only for graphics. It allows the user to access some basic functions related to the image created on the canvas (including animation) -->
-            <img id="dogSprite" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacter.png">  // change sprite here
+            <img id="dogSprite" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacter.png" alt="Character"></img>
         </canvas>
-        <div id="controls"> <!--basic radio buttons which can be used to check whether each individual animaiton works -->
-            <input type="radio" name="animation" id="down">
+        <div id="controls"> <!--basic radio buttons which can be used to check whether each individual animation works -->
+            <input type="radio" name="animation" id="down" checked>
             <label for="down">Down</label><br>
-            <input type="radio" name="animation" id="right">
+            <input type="radio" name="animation" id="right" checked>
             <label for="right">Right</label><br>
-            <input type="radio" name="animation" id="up">
+            <input type="radio" name="animation" id="up" checked>
             <label for="up">Up</label><br>
             <input type="radio" name="animation" id="left">
-            <label for="left">Left</label><br>
+            <label for="Left">Left</label><br>
         </div>
     </div>
 </body>
 
 <script>
-    // start on page load
     window.addEventListener('load', function () {
         const canvas = document.getElementById('spriteContainer');
-        const ctx = canvas.getContext('2d');
-        const SPRITE_WIDTH = 32;  // matches sprite pixel width
-        const SPRITE_HEIGHT = 32; // matches sprite pixel height
-        const FRAME_LIMIT = 4;  // matches number of frames per sprite row, this code assume each row is same
+        const SPRITE_WIDTH = 32px;
+        const SPRITE_HEIGHT = 32px;
+        const FRAME_LIMIT = 48;
 
-        const SCALE_FACTOR = 4;  // control size of sprite on canvas
         canvas.width = SPRITE_WIDTH * SCALE_FACTOR;
         canvas.height = SPRITE_HEIGHT * SCALE_FACTOR;
 
         class Dog {
             constructor() {
                 this.image = document.getElementById("dogSprite");
+                this.spriteWidth = SPRITE_WIDTH;
+                this.spriteHeight = SPRITE_HEIGHT;
+                this.width = this.spriteWidth;
+                this.height = this.spriteHeight;
                 this.x = 0;
                 this.y = 0;
+                this.scale = 1;
                 this.minFrame = 0;
                 this.maxFrame = FRAME_LIMIT;
                 this.frameX = 0;
                 this.frameY = 0;
             }
 
-            // draw dog object
             draw(context) {
                 context.drawImage(
                     this.image,
-                    this.frameX * SPRITE_WIDTH,
-                    this.frameY * SPRITE_HEIGHT,
-                    SPRITE_WIDTH,
-                    SPRITE_HEIGHT,
+                    this.frameX * this.spriteWidth,
+                    this.frameY * this.spriteHeight,
+                    this.spriteWidth,
+                    this.spriteHeight,
                     this.x,
                     this.y,
-                    canvas.width,
-                    canvas.height
+                    this.width * this.scale,
+                    this.height * this.scale
                 );
             }
 
-            // update frameX of object
             update() {
                 if (this.frameX < this.maxFrame) {
                     this.frameX++;
@@ -75,10 +74,9 @@ type: hacks
             }
         }
 
-        // dog object
         const dog = new Dog();
 
-        // update frameY of dog object, action from idle, bark, walk radio control
+        // Add event listener to the parent container for event delegation
         const controls = document.getElementById('controls');
         controls.addEventListener('click', function (event) {
             if (event.target.tagName === 'INPUT') {
@@ -102,26 +100,13 @@ type: hacks
             }
         });
 
-        // Animation recursive control function
         function animate() {
-            // Clears the canvas to remove the previous frame.
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draws the current frame of the sprite.
             dog.draw(ctx);
-
-            // Updates the `frameX` property to prepare for the next frame in the sprite sheet.
             dog.update();
+            requestAnimationFrame(animate);
+        }
 
-            setTimeout(() => {
-        // Uses `requestAnimationFrame` to synchronize the animation loop with the display's refresh rate,
-        // ensuring smooth visuals.
-        requestAnimationFrame(animate);
-    }, 200); // Adjust the delay in milliseconds (e.g., 100 milliseconds = 10 frames per second).
-}
-
-        // run 1st animate
         animate();
     });
 </script>
-
